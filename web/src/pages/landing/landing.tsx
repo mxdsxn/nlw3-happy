@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiArrowRight } from 'react-icons/fi'
 
-import '../styles/pages/landing.css'
+import '../../styles/pages/landing.css'
 
-import logoImg from '../images/logo.svg'
+import logoImg from '../../images/logo.svg'
 
 export default () => {
     return (

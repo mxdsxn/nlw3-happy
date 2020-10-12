@@ -5,8 +5,8 @@ import { FiPlus } from 'react-icons/fi'
 import { Map, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
-import mapMarkerImg from '../images/map-marker.svg'
-import '../styles/pages/orphanage-map.css'
+import mapMarkerImg from '../../images/map-marker.svg'
+import '../../styles/pages/orphanage-map.css'
 
 export default () => {
     return (
