@@ -75,8 +75,8 @@ export default {
     })
 
     const orphanage = orphanagesRepository.create(data)
-
-    await orphanagesRepository.save(orphanage)
+console.log(orphanage)
+    // await orphanagesRepository.save(orphanage)
 
     return res.status(201).json(orphanage)
   }
