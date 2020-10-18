@@ -39,7 +39,6 @@ export default () => {
     happyApi.orphanageShow(Number(id))
       .then(res => {
         setOrphanage(res)
-        console.log(res)
       })
   }, [id])
 
