@@ -1,0 +1,1 @@
+export { default as OrphanagesMap } from './orphanages-map'

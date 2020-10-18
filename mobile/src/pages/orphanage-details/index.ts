@@ -1,0 +1,1 @@
+export { default as OrphanageDetails } from './orphanage-details'
