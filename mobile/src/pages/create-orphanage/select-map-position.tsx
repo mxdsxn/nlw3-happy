@@ -11,18 +11,18 @@ export default function SelectMapPosition() {
   const navigation = useNavigation();
 
   function handleNextStep() {
-    navigation.navigate('create-orphanage');
+    navigation.navigate('create-orphanage', { position });
   }
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
 
-  const handleMapClick = (event: any) => {
+  const handleMapClick = (event: MapEvent) => {
     const {
-      lat,
-      lng
-    } = event
+      latitude,
+      longitude
+    } = event.nativeEvent.coordinate
     setPosition({
-      latitude: lat,
-      longitude: lng
+      latitude,
+      longitude
     })
   }
   return (
@@ -37,18 +37,28 @@ export default function SelectMapPosition() {
         style={styles.mapStyle}
         onPress={x => handleMapClick(x)}
       >
-        <Marker
-          icon={mapMarkerImg}
-          coordinate={{
-            latitude: -22.5052902,
-            longitude: -44.0925879
-          }}
-        />
+        {
+          (position.latitude !== 0 || position.longitude !== 0) &&
+          (
+            <Marker
+              icon={mapMarkerImg}
+              coordinate={{
+                latitude: position.latitude,
+                longitude: position.longitude
+              }}
+            />
+          )
+        }
       </MapView>
 
-      <RectButton style={styles.nextButton} onPress={handleNextStep}>
-        <Text style={styles.nextButtonText}>Próximo</Text>
-      </RectButton>
+      {
+        (position.latitude !== 0 || position.longitude !== 0) &&
+        (
+          <RectButton style={styles.nextButton} onPress={handleNextStep}>
+            <Text style={styles.nextButtonText}>Próximo</Text>
+          </RectButton>
+        )
+      }
     </View>
   )
 }

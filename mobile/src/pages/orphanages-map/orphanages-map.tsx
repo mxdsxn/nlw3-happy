@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps'
 import { Feather } from '@expo/vector-icons'
 
 import mapMarker from '../../images/mapMarker.png'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import { happyApi } from '../../services/api';
 
@@ -19,10 +19,10 @@ export default () => {
 
     const [orphanages, setOrphanages] = useState<Array<Orphanage>>([])
 
-    useEffect(() => {
+    useFocusEffect(() => {
         happyApi.orphanageList().then(res => { setOrphanages(res) }
         )
-    }, [])
+    })
 
     const handleNavigationToOrphanageDatails = (id: number) => {
         navigation.navigate('orphanage-details', { id })

@@ -27,8 +27,6 @@ export default () => {
   }
 
   const handleSelectImages = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.files)
-
     if (!event.target.files)
       return
     const imagesFile = Array.from(event.target.files)
