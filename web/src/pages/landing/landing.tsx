@@ -18,7 +18,7 @@ export default () => {
                 </main>
                 <div className="location">
                     <strong>
-                        Volta Redonda
+                        Volta Redonda é o bixo
                     </strong>
                     <span>Rio de Janeiro</span>
                 </div>
